@@ -1,0 +1,31 @@
+Date: 2026-03-05
+Titre: Découverte initiale NovaTech Startup
+Participants: Alice Martin, Léa Moreau, Julien Park (NovaTech CEO), Amina Diallo (NovaTech CTO)
+
+[Début de la réunion - 14:01]
+
+Alice Martin: Bonjour Julien, Amina ! Merci de nous consacrer du temps. Léa et moi sommes ravis de vous présenter notre solution. Mais d'abord, pouvez-vous nous parler de NovaTech et de vos besoins ?
+
+Julien Park (NovaTech): Bien sûr. NovaTech est une startup de 45 personnes qui développe une plateforme de gestion de la mobilité urbaine. On a une croissance de 200% en 2025, on gère aujourd'hui 12 villes partenaires. On cherche une solution pour centraliser notre catalogue de services et gérer nos partenaires de manière scalable.
+
+Amina Diallo (NovaTech): Techniquement, on est full cloud sur AWS. On a besoin d'une API robuste avec des webhooks pour synchroniser en temps réel avec notre plateforme. Notre stack c'est Node.js et Python. On a une contrainte forte : time-to-market, on ne peut pas se permettre une intégration de 6 mois.
+
+Léa Moreau: Très bien. Notre solution s'intègre en 2-4 semaines selon la complexité. On a des SDKs Node.js et Python natifs. Les webhooks sont nativement supportés avec retry automatique.
+
+Alice Martin: Pour votre use case mobilité, on a déjà des clients dans le secteur - Transdev et Keolis utilisent notre plateforme. Je peux vous mettre en contact si vous voulez des retours d'expérience.
+
+Julien Park (NovaTech): C'est très intéressant. Quelle est votre politique de pricing pour les startups en croissance ? Notre volume va tripler d'ici 12 mois.
+
+Alice Martin: On a un programme startup spécial avec une tarification progressive qui suit votre croissance. Je peux vous préparer une proposition personnalisée basée sur vos volumes actuels et projections.
+
+Amina Diallo (NovaTech): Est-ce que vous avez une démo interactive qu'on peut tester nous-mêmes ? On préfère toujours tester avant de s'engager.
+
+Léa Moreau: Oui, on va vous donner accès à un environnement sandbox complet après cette réunion. Vous aurez 30 jours pour tester toutes les fonctionnalités.
+
+Alice Martin: Pour la prochaine étape, on vous propose une démo technique approfondie le 17 mars si ça vous convient. Amina, est-ce que vous pourriez avoir votre équipe technique disponible ?
+
+Amina Diallo (NovaTech): Le 17 mars c'est parfait. On sera 2-3 dev en plus de moi.
+
+Alice Martin: Parfait. Actions : Alice prépare démo personnalisée pour le 17 mars, Léa envoie accès sandbox à Amina, Alice prépare proposition pricing startup.
+
+[Fin de la réunion - 14:47]

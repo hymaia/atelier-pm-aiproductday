@@ -1,0 +1,6 @@
+date,start_time,end_time,title,participants,location,description
+2026-03-17,09:00,09:45,Sync produit Acme Corp,Alice Martin;Bob Leroy;Sarah Kim (Acme),Zoom,Point hebdomadaire sur la roadmap Q2 et avancement intégration API
+2026-03-17,11:00,12:00,Review trimestrielle Carrefour Digital,Alice Martin;Marc Dupont;Julie Chen (Carrefour);Paul Renard (Carrefour),Salle Paris 3,Bilan Q1 et planification Q2 - présenter métriques adoption
+2026-03-17,14:00,14:30,Standup équipe interne,Alice Martin;Bob Leroy;Emma Rousseau;Thomas Bernard,Slack Huddle,Standup quotidien équipe produit
+2026-03-17,15:30,16:30,Démo produit NovaTech Startup,Alice Martin;Léa Moreau;Julien Park (NovaTech),Google Meet,Première démo de notre solution pour NovaTech - prospect chaud
+2026-03-17,17:00,17:30,One-on-one Marc Dupont,Alice Martin;Marc Dupont,Salle Paris 1,Point mensuel avec le responsable produit

@@ -1,0 +1,19 @@
+# PM Meeting Assistant — Dépendances Python
+
+# API Claude (Anthropic)
+anthropic>=0.40.0
+
+# Interface CLI riche
+rich>=13.7.0
+
+# Traitement des données
+pandas>=2.2.0
+
+# Fichiers calendrier
+icalendar>=5.0.0
+
+# PDF
+pdfplumber>=0.11.0
+
+# Word documents
+python-docx>=1.1.0

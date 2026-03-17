@@ -1,0 +1,31 @@
+Date: 2026-03-10
+Titre: Sync produit Acme Corp - Semaine 10
+Participants: Alice Martin, Bob Leroy, Sarah Kim (Acme), James Wilson (Acme)
+
+[Début de la réunion - 09:02]
+
+Alice Martin: Bonjour tout le monde, merci de vous connecter. Sarah, James, comment s'est passée la semaine ?
+
+Sarah Kim (Acme): Bonjour Alice ! Bonne semaine dans l'ensemble. On a terminé les tests de régression sur l'intégration de l'API v2. Quelques bugs mineurs à corriger mais rien de bloquant.
+
+James Wilson (Acme): Oui, on a identifié un problème de timeout sur les endpoints `/products/batch` quand le payload dépasse 500 items. On a besoin d'une clarification sur les limites de rate limiting.
+
+Bob Leroy: Je peux répondre là-dessus. La limite actuelle est 1000 requêtes par minute par tenant. Pour les batch, on recommande de fragmenter en lots de 200 items maximum pour éviter les timeouts.
+
+James Wilson (Acme): Parfait, c'est noté. On va ajuster notre implémentation.
+
+Alice Martin: Bien. Sur la roadmap Q2 - j'avais promis un point sur les nouvelles fonctionnalités. On va livrer la gestion des variantes produits en avril et le module analytics en mai. Est-ce que ça correspond à vos attentes ?
+
+Sarah Kim (Acme): Pour les variantes, c'est critique pour nous. On a environ 40% de notre catalogue en mode variantes. Vous avez une date précise pour la mise en prod ?
+
+Alice Martin: On vise le 15 avril pour la beta et le 1er mai pour la prod. Je vous enverrai les release notes en avance pour que vous puissiez préparer votre migration.
+
+Sarah Kim (Acme): Super, on va bloquer des créneaux de test pour mi-avril.
+
+Bob Leroy: J'ai une question de mon côté - est-ce que vous avez eu le temps de tester le nouveau SDK Python qu'on a livré la semaine dernière ?
+
+James Wilson (Acme): On l'a regardé rapidement, la doc est bien. On n'a pas encore eu le temps de faire une intégration complète mais c'est sur notre planning cette semaine.
+
+Alice Martin: Excellent. Actions pour la semaine : James ajuste l'implémentation batch, Sarah planifie les tests pour mi-avril, Bob documente les limites rate limiting dans la FAQ.
+
+[Fin de la réunion - 09:38]

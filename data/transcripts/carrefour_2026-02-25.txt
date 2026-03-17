@@ -1,0 +1,29 @@
+Date: 2026-02-25
+Titre: Point mensuel Carrefour Digital - Février
+Participants: Alice Martin, Marc Dupont, Julie Chen (Carrefour), Paul Renard (Carrefour), Sophie Blanc (Carrefour)
+
+[Début de la réunion - 11:05]
+
+Alice Martin: Bonjour à tous. Merci d'avoir pris le temps. On a beaucoup à couvrir aujourd'hui. Marc, tu veux bien commencer par le bilan du mois ?
+
+Marc Dupont: Oui bien sûr. Sur février on a eu une bonne progression. Le taux d'adoption de la plateforme chez Carrefour est passé de 34% à 41% des utilisateurs actifs. C'est au-dessus des objectifs.
+
+Julie Chen (Carrefour): On confirme. On a déployé la solution dans 3 nouveaux départements ce mois-ci - les achats, la logistique, et le service client. Les retours sont positifs mais on a des remontées sur la lenteur de chargement des tableaux de bord.
+
+Alice Martin: On est au courant du problème de performance. Notre équipe technique travaille dessus. On vise une résolution pour la semaine du 10 mars. La latence actuelle sur les dashboards lourds est de 4-6 secondes, on veut descendre sous 2 secondes.
+
+Paul Renard (Carrefour): C'est important pour nous. Nos managers de rayon utilisent les dashboards sur tablette en magasin et ça doit être rapide.
+
+Sophie Blanc (Carrefour): Est-ce que vous avez réfléchi à une version mobile native ? On a beaucoup de demandes des équipes terrain.
+
+Alice Martin: On a une app mobile dans notre roadmap pour H2 2026. Je vous ferai une démo du prototype en avril. Pour l'instant on a amélioré le responsive design mais une app native c'est Q3-Q4.
+
+Marc Dupont: Sur le renouvellement du contrat - il arrive à échéance en juin. On devrait prévoir un point dédié pour en discuter en avril.
+
+Alice Martin: Absolument, je prends note. Je vais bloquer un créneau en avril pour le commercial + produit. Est-ce que vous avez des sujets spécifiques à mettre sur la table ?
+
+Julie Chen (Carrefour): On veut discuter de l'extension à nos filiales en Espagne et en Belgique. Et aussi des SLA - on voudrait des garanties plus fortes sur la disponibilité.
+
+Alice Martin: Compris. Je prépare une proposition sur les SLA pour cette réunion d'avril. Actions : Alice prépare proposition SLA, Alice bloque réunion commerciale avril, équipe technique résout problème performance avant 10 mars.
+
+[Fin de la réunion - 11:58]
