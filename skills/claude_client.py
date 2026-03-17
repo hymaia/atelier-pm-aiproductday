@@ -23,7 +23,9 @@ if _env_file.exists():
         line = line.strip()
         if line and not line.startswith("#") and "=" in line:
             key, _, value = line.partition("=")
-            os.environ.setdefault(key.strip(), value.strip())
+            # Toujours charger depuis .env (écrase les valeurs vides de l'environnement)
+            if not os.environ.get(key.strip()):
+                os.environ[key.strip()] = value.strip()
 
 
 def get_client() -> anthropic.Anthropic:

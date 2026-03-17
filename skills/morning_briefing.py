@@ -331,14 +331,7 @@ def run(target_date: str | None = None) -> None:
     # ═══ Génération du briefing avec Claude ═══
     briefing = generate_briefing_with_claude(target_date, meetings_today, historical_data)
 
-    # Affichage avec rich
-    console.print(Rule(style="blue"))
-    console.print(Panel(
-        briefing,
-        title=f"[bold]Briefing du matin — {target_date}[/bold]",
-        border_style="blue",
-        padding=(1, 2),
-    ))
+    print(briefing)
 
 
 if __name__ == "__main__":

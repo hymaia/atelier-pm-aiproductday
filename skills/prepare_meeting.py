@@ -287,14 +287,7 @@ def run(query: str | None = None) -> None:
         # ═══ Génération avec Claude ═══
         briefing = generate_preparation_with_claude(query, files_content)
 
-    # Affichage avec rich
-    console.print(Rule(style="blue"))
-    console.print(Panel(
-        briefing,
-        title=f"[bold]Fiche de préparation — {query}[/bold]",
-        border_style="blue",
-        padding=(1, 2),
-    ))
+    print(briefing)
 
 
 if __name__ == "__main__":
