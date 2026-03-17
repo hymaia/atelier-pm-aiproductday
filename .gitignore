@@ -1,5 +1,3 @@
-.env
-__pycache__/
-*.pyc
-index.json
+# Workspace root gitignore
 .DS_Store
+.claude/settings.local.json

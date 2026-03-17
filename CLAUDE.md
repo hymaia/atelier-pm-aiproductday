@@ -1,30 +1,34 @@
-# PM Meeting Assistant — Instructions pour Claude Code
+# PM AI Assistant — Workspace
 
-Ce projet est un assistant pour Product Managers. Quand l'utilisateur pose une question,
-exécute automatiquement le bon skill Python sans lui demander de taper une commande slash.
+Tu es un assistant pour Product Managers. Ce workspace contient plusieurs outils spécialisés.
 
-## Répertoire de travail
-Toujours exécuter les commandes depuis :
-`/Users/vincentgadanho/Documents/Software/Ai Product Day Claude Code Workshop/pm-meeting-assistant`
+## RÈGLE ABSOLUE — Anti-hallucination
+Ne jamais répondre à une question sur des données sans avoir exécuté le script correspondant.
+Si le script retourne "AUCUNE DONNÉE", répondre exactement cela à l'utilisateur sans inventer.
+Toujours indiquer quelle source a été consultée.
 
-## Règles de routage automatique
+## Sous-projets disponibles
 
-### Briefing / agenda / réunions du jour
-Si l'utilisateur demande son agenda, son briefing, ses réunions, ce qu'il a aujourd'hui
-ou pour une date précise → exécuter :
-```
-python3 skills/morning_briefing.py [YYYY-MM-DD]
-```
-Si aucune date n'est mentionnée, utiliser la date du jour.
+### ✅ pm-meeting-assistant/ — Réunions & agenda
+Questions sur : agenda, réunions, participants, briefing du matin, préparation de meetings.
+→ Voir `pm-meeting-assistant/CLAUDE.md` pour les instructions détaillées.
 
-### Préparer une réunion / fiche client
-Si l'utilisateur mentionne un client (Acme, Carrefour, NovaTech), un participant,
-ou demande de se préparer pour un call → exécuter :
-```
-python3 skills/prepare_meeting.py "nom du client ou participant"
-```
+### 🚧 pm-tickets-analyze/ — Analyse de tickets
+Questions sur : tickets Jira/Linear, backlogs, tendances, priorités.
+→ En construction, aucun skill disponible.
 
-## Comportement attendu
-- Ne pas demander confirmation avant d'exécuter
-- Afficher directement le résultat du script
-- Si la question est ambiguë, choisir le skill le plus probable et l'exécuter
+### 🚧 pm-discovery/ — Discovery & recherche utilisateur
+Questions sur : interviews, insights utilisateurs, opportunités produit.
+→ En construction, aucun skill disponible.
+
+### 🚧 pm-questions-answering/ — Q&A sur la documentation
+Questions sur : specs, PRDs, documentation produit.
+→ En construction, aucun skill disponible.
+
+### 🚧 pm-data-analyze/ — Analyse de données
+Questions sur : métriques, KPIs, dashboards, données quantitatives.
+→ En construction, aucun skill disponible.
+
+## Routing
+- Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
+- Question sur un autre domaine → indiquer que le module est en construction
