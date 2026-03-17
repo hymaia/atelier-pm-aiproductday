@@ -29,6 +29,10 @@ Questions sur : specs, PRDs, documentation produit.
 Questions sur : métriques, KPIs, dashboards, données quantitatives.
 → En construction, aucun skill disponible.
 
+### 🚧 pm-dev-bridge/ — Compréhension dev & prototypage
+Questions sur : releases, PRs, changelogs, specs, user stories, prototypage de fonctionnalités.
+→ En construction, aucun skill disponible.
+
 ## Routing
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
 - Question sur un autre domaine → indiquer que le module est en construction
