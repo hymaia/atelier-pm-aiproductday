@@ -1,11 +1,5 @@
 # PM Meeting Assistant — Dépendances Python
 
-# API Claude (Anthropic)
-anthropic>=0.40.0
-
-# Interface CLI riche
-rich>=13.7.0
-
 # Traitement des données
 pandas>=2.2.0
 
