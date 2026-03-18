@@ -1,0 +1,6 @@
+date,start_time,end_time,title,participants,location,description
+2026-03-18,09:00,09:30,Standup équipe interne,Alice Martin;Bob Leroy;Emma Rousseau;Thomas Bernard,Slack Huddle,Standup quotidien équipe produit
+2026-03-18,10:00,11:00,Sync roadmap Acme Corp,Alice Martin;Bob Leroy;Sarah Kim (Acme);David Lee (Acme),Zoom,Revue des priorités Q2 et validation des specs de l'intégration SSO
+2026-03-18,11:30,12:00,Point budget T2 avec Marc Dupont,Alice Martin;Marc Dupont,Salle Paris 1,Arbitrage budgétaire pour les recrutements Q2 et outils produit
+2026-03-18,14:00,15:00,Atelier discovery NovaTech,Alice Martin;Léa Moreau;Julien Park (NovaTech);Clara Nguyen (NovaTech),Google Meet,Session discovery pour cadrer les besoins NovaTech avant la phase de contractualisation
+2026-03-18,16:00,16:30,Retrospective sprint 22,Alice Martin;Bob Leroy;Emma Rousseau;Thomas Bernard;Léa Moreau,Salle Paris 3,Rétro de fin de sprint - identifier les points de friction et actions d'amélioration
