@@ -11,13 +11,16 @@
 ## Structure prévue
 ```
 pm-tickets-analyze/
-  skills/
-    analyze_backlog.py      # tendances et état du backlog
-    summarize_sprint.py     # résumé de sprint
   data/
     tickets/                # exports CSV/JSON de tickets
-  index.json                # index des fichiers
-  indexer.py                # indexeur local
+  utils/                    # loaders partagés entre skills
+  .claude/skills/
+    analyze-backlog/
+      SKILL.md              # user-invocable: false
+      fetch_tickets.py      # glob data/, retourne texte brut
+    summarize-sprint/
+      SKILL.md              # user-invocable: false
+      fetch_sprint.py       # glob data/, retourne texte brut
 ```
 
 ## Instructions pour Claude Code

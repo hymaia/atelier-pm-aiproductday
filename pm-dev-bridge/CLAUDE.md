@@ -11,15 +11,18 @@
 ## Structure prévue
 ```
 pm-dev-bridge/
-  skills/
-    summarize_releases.py     # résumé des livraisons récentes
-    generate_spec.py          # génération de spec à partir d'une idée
   data/
     releases/                 # changelogs, release notes (.md, .txt)
     pull_requests/            # exports de PRs (GitHub, GitLab)
-    specs/                    # specs et user stories générées
-  index.json
-  indexer.py
+    specs/                    # specs et user stories
+  utils/                      # loaders partagés entre skills
+  .claude/skills/
+    summarize-releases/
+      SKILL.md                # user-invocable: false
+      fetch_releases.py       # glob data/, retourne texte brut
+    generate-spec/
+      SKILL.md                # user-invocable: false
+      fetch_context.py        # glob data/, retourne texte brut
 ```
 
 ## Instructions pour Claude Code

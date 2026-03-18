@@ -11,14 +11,14 @@
 ## Structure prévue
 ```
 pm-questions-answering/
-  skills/
-    answer_question.py     # Q&A sur la documentation
-    search_docs.py         # recherche dans les docs
   data/
-    specs/                 # PRDs, specs (.md, .pdf, .docx)
-    wikis/                 # exports Notion/Confluence
-  index.json
-  indexer.py
+    specs/                    # PRDs, specs (.md, .pdf, .docx)
+    wikis/                    # exports Notion/Confluence
+  utils/                      # loaders partagés entre skills
+  .claude/skills/
+    answer-question/
+      SKILL.md                # user-invocable: false
+      fetch_docs.py           # glob data/, retourne texte brut
 ```
 
 ## Instructions pour Claude Code

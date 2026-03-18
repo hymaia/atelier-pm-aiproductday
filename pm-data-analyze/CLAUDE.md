@@ -11,14 +11,17 @@
 ## Structure prévue
 ```
 pm-data-analyze/
-  skills/
-    analyze_metrics.py     # analyse de métriques
-    summarize_kpis.py      # résumé de KPIs
   data/
-    metrics/               # exports CSV de métriques
-    dashboards/            # snapshots de dashboards
-  index.json
-  indexer.py
+    metrics/                  # exports CSV de métriques
+    dashboards/               # snapshots de dashboards
+  utils/                      # loaders partagés entre skills
+  .claude/skills/
+    analyze-metrics/
+      SKILL.md                # user-invocable: false
+      fetch_metrics.py        # glob data/, retourne texte brut
+    summarize-kpis/
+      SKILL.md                # user-invocable: false
+      fetch_kpis.py           # glob data/, retourne texte brut
 ```
 
 ## Instructions pour Claude Code

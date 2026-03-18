@@ -11,14 +11,17 @@
 ## Structure prévue
 ```
 pm-discovery/
-  skills/
-    synthesize_interviews.py  # synthèse d'entretiens
-    extract_insights.py       # extraction d'opportunités
   data/
     interviews/               # transcriptions d'interviews (.txt, .md)
     insights/                 # notes de discovery
-  index.json
-  indexer.py
+  utils/                      # loaders partagés entre skills
+  .claude/skills/
+    synthesize-interviews/
+      SKILL.md                # user-invocable: false
+      fetch_interviews.py     # glob data/, retourne texte brut
+    extract-insights/
+      SKILL.md                # user-invocable: false
+      fetch_insights.py       # glob data/, retourne texte brut
 ```
 
 ## Instructions pour Claude Code
