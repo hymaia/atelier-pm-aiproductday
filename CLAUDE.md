@@ -17,9 +17,9 @@ Questions sur : agenda, réunions, participants, briefing du matin, préparation
 Questions sur : tickets Jira/Linear, backlogs, tendances, priorités.
 → En construction, aucun skill disponible.
 
-### 🚧 pm-discovery/ — Discovery & recherche utilisateur
+### ✅ pm-discovery/ — Discovery & recherche utilisateur
 Questions sur : interviews, insights utilisateurs, opportunités produit.
-→ En construction, aucun skill disponible.
+→ Voir `pm-discovery/CLAUDE.md` pour les instructions détaillées.
 
 ### ✅ pm-inbox/ — Gestion des messages entrants
 Questions sur : emails non lus, messages Slack, triage des urgences, brouillons de réponse.
@@ -40,6 +40,7 @@ Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile
 ## Routing
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
 - Question sur emails/messages/Slack → exécuter les skills dans `pm-inbox/`
+- Question sur interviews/insights/opportunités produit → exécuter les skills dans `pm-discovery/`
 - Question sur un autre domaine → indiquer que le module est en construction
 
 ## Convention code partagé

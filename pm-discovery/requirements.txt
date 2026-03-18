@@ -1,0 +1,2 @@
+# pm-discovery — Dépendances Python
+# Aucune dépendance externe — bibliothèque standard uniquement

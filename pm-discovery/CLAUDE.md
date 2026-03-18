@@ -1,30 +1,39 @@
 # pm-discovery — Discovery & recherche utilisateur
 
-🚧 **Module en construction** — Aucun skill disponible pour l'instant.
+## RÈGLE ABSOLUE — Anti-hallucination
+Ne jamais répondre à une question sur des données sans avoir exécuté le script correspondant.
+Si le script retourne "AUCUNE DONNÉE", répondre exactement cela à l'utilisateur sans inventer.
+Toujours indiquer quelle source a été consultée.
 
-## Périmètre prévu
-- Synthèse d'interviews utilisateurs
-- Extraction d'insights et d'opportunités produit
-- Regroupement de verbatims par thème
-- Suivi des hypothèses de discovery
+## Skills disponibles
 
-## Structure prévue
+### fetch-interviews
+Utiliser quand l'utilisateur demande :
+- Les verbatims ou retours d'un utilisateur, client ou persona
+- Les interviews sur un thème précis (performance, mobile, onboarding...)
+- Les interviews d'une période donnée
+
+### fetch-opportunities
+Utiliser quand l'utilisateur demande :
+- Les opportunités produit identifiées
+- Les pain points récurrents
+- Ce qu'il faut retenir de la recherche utilisateur
+- Une synthèse des insights
+
+## Architecture
 ```
 pm-discovery/
-  data/
-    interviews/               # transcriptions d'interviews (.txt, .md)
-    insights/                 # notes de discovery
-  utils/                      # loaders partagés entre skills
-  .claude/skills/
-    synthesize-interviews/
-      SKILL.md                # user-invocable: false
-      fetch_interviews.py     # glob data/, retourne texte brut
-    extract-insights/
-      SKILL.md                # user-invocable: false
-      fetch_insights.py       # glob data/, retourne texte brut
+├── CLAUDE.md
+├── requirements.txt
+├── data/
+│   └── interviews/        ← transcriptions .md par persona/client + date
+├── utils/
+│   └── interview_loader.py
+└── .claude/skills/
+    ├── fetch-interviews/
+    │   ├── SKILL.md
+    │   └── fetch_interviews.py
+    └── fetch-opportunities/
+        ├── SKILL.md
+        └── fetch_opportunities.py
 ```
-
-## Instructions pour Claude Code
-Si l'utilisateur pose une question sur des interviews ou la discovery, répondre :
-"Le module pm-discovery est en construction. Aucun skill n'est disponible pour l'instant."
-Ne pas inventer de réponse à partir d'autres sources.
