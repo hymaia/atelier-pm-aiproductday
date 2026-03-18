@@ -40,3 +40,29 @@ Questions sur : releases, PRs, changelogs, specs, user stories, prototypage de f
 ## Convention code partagé
 Tout code Python partagé entre plusieurs scripts d'un module va dans `utils/`.
 Chaque module a son propre `utils/` — pas de `utils/` partagé entre modules.
+
+Types de fichiers attendus dans `utils/` :
+- `{source}_loader.py` — lit un fichier local et retourne `list[dict]` normalisé (une fonction `load(filepath)`)
+- `api_client.py` — si les données viennent d'une API distante
+- Pas de sous-dossiers dans `utils/` sauf si > 8 fichiers
+
+## Convention architecture des modules
+Chaque module suit cette structure :
+```
+pm-xxx/
+├── CLAUDE.md                  ← routing local + règles
+├── data/                      ← fichiers de données brutes
+├── utils/                     ← loaders et code partagé
+└── .claude/skills/
+    └── nom-du-skill/
+        ├── SKILL.md           ← user-invocable: false + instructions Claude
+        └── fetch_xxx.py       ← glob data/, appelle utils/, retourne texte brut
+```
+
+Règles à respecter lors de la création ou modification de fichiers :
+- Les skills sont toujours dans `.claude/skills/{nom-du-skill}/`
+- Chaque skill contient exactement un `SKILL.md` et un script `fetch_xxx.py`
+- Le script est nommé par ce qu'il fait (`fetch_agenda.py`, `fetch_client_history.py`)
+- `user-invocable: false` obligatoire dans le frontmatter de chaque `SKILL.md`
+- Pas d'`indexer.py` ni d'`index.json` — les scripts font un glob direct sur `data/`
+- Pas de `main.py` — l'interaction se fait uniquement via Claude Code
