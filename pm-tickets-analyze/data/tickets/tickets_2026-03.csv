@@ -1,0 +1,21 @@
+id,title,type,status,priority,assignee,sprint,created_at,labels
+T-101,Variantes produits — modèle de données,feature,done,high,Bob Leroy,Sprint 9,2026-03-01,variantes;api
+T-102,Variantes produits — endpoints API,feature,in_review,high,Bob Leroy,Sprint 9,2026-03-01,variantes;api
+T-103,Variantes produits — SDK Python,feature,in_progress,high,Emma Rousseau,Sprint 9,2026-03-02,variantes;sdk
+T-104,Variantes produits — documentation,feature,todo,medium,Emma Rousseau,Sprint 9,2026-03-02,variantes;doc
+T-105,Bug timeout batch >500 items,bug,done,critical,Bob Leroy,Sprint 9,2026-03-03,api;batch;acme
+T-106,Rate limiting non documenté — fix doc,chore,in_progress,high,Thomas Bernard,Sprint 9,2026-03-03,doc;api
+T-107,Dashboards lourds — optimisation requêtes,bug,done,critical,Bob Leroy,Sprint 9,2026-03-04,performance;carrefour
+T-108,Dashboards lourds — cache layer,feature,in_review,high,Thomas Bernard,Sprint 9,2026-03-04,performance;carrefour
+T-109,Webhooks — mécanisme de retry,feature,in_progress,high,Bob Leroy,Sprint 9,2026-03-05,webhooks;api;novatech
+T-110,Webhooks — dead letter queue,feature,todo,medium,Bob Leroy,Sprint 9,2026-03-05,webhooks;api
+T-111,Benchmarks de charge — documentation publique,chore,todo,medium,Thomas Bernard,Sprint 9,2026-03-06,doc;scalabilité
+T-112,App mobile — prototype wireframes,feature,in_progress,medium,Emma Rousseau,Sprint 9,2026-03-06,mobile;design
+T-113,Bug export CSV — encodage UTF-8,bug,done,high,Thomas Bernard,Sprint 9,2026-03-07,export;bug
+T-114,Onboarding — guided tour J+1,feature,todo,medium,Emma Rousseau,Sprint 10,2026-03-10,onboarding;ux
+T-115,Alertes seuils — configuration UI,feature,todo,low,Emma Rousseau,Sprint 10,2026-03-10,alertes;dashboard
+T-116,Partage dashboard par équipe,feature,todo,medium,Thomas Bernard,Sprint 10,2026-03-10,dashboard;collaboration
+T-117,Bug pagination avec filtres complexes,bug,blocked,high,Bob Leroy,Sprint 9,2026-03-11,api;pagination
+T-118,Connecteur CRM natif — specs,chore,todo,low,Alice Martin,Sprint 10,2026-03-12,crm;roadmap
+T-119,SDK Node.js — exemples edge cases,chore,in_progress,medium,Thomas Bernard,Sprint 9,2026-03-13,sdk;doc;novatech
+T-120,Variantes produits — tests de charge,chore,blocked,high,Emma Rousseau,Sprint 9,2026-03-14,variantes;test

@@ -13,9 +13,9 @@ Toujours indiquer quelle source a été consultée.
 Questions sur : agenda, réunions, participants, briefing du matin, préparation de meetings.
 → Voir `pm-meeting-assistant/CLAUDE.md` pour les instructions détaillées.
 
-### 🚧 pm-tickets-analyze/ — Analyse de tickets
+### ✅ pm-tickets-analyze/ — Analyse de tickets
 Questions sur : tickets Jira/Linear, backlogs, tendances, priorités.
-→ En construction, aucun skill disponible.
+→ Voir `pm-tickets-analyze/CLAUDE.md` pour les instructions détaillées.
 
 ### ✅ pm-discovery/ — Discovery & recherche utilisateur
 Questions sur : interviews, insights utilisateurs, opportunités produit.
@@ -41,6 +41,7 @@ Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
 - Question sur emails/messages/Slack → exécuter les skills dans `pm-inbox/`
 - Question sur interviews/insights/opportunités produit → exécuter les skills dans `pm-discovery/`
+- Question sur tickets/backlog/sprint/tendances → exécuter les skills dans `pm-tickets-analyze/`
 - Question sur un autre domaine → indiquer que le module est en construction
 
 ## Convention code partagé

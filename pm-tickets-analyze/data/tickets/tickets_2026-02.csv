@@ -1,0 +1,21 @@
+id,title,type,status,priority,assignee,sprint,created_at,labels
+T-081,API v2 — migration guide,chore,done,high,Thomas Bernard,Sprint 7,2026-02-01,api;migration
+T-082,API v2 — compatibility layer,feature,done,high,Bob Leroy,Sprint 7,2026-02-01,api;migration
+T-083,Bug authentification OAuth timeout,bug,done,critical,Bob Leroy,Sprint 7,2026-02-03,auth;bug
+T-084,Dashboard — nouvelle UI filtres,feature,done,medium,Emma Rousseau,Sprint 7,2026-02-04,dashboard;ux
+T-085,SDK Python v2 — release,feature,done,high,Bob Leroy,Sprint 7,2026-02-05,sdk;python
+T-086,SDK Node.js v2 — release,feature,done,high,Thomas Bernard,Sprint 7,2026-02-05,sdk;node
+T-087,Bug dashboard — données décalées timezone,bug,done,high,Thomas Bernard,Sprint 7,2026-02-06,dashboard;bug
+T-088,Environnement de test dédié Acme,chore,done,high,Bob Leroy,Sprint 7,2026-02-07,acme;infra
+T-089,Webhooks — documentation de base,chore,done,medium,Thomas Bernard,Sprint 8,2026-02-10,webhooks;doc
+T-090,Bug import bulk — doublons,bug,done,high,Bob Leroy,Sprint 8,2026-02-11,import;bug
+T-091,Dashboard performance — audit initial,chore,done,high,Thomas Bernard,Sprint 8,2026-02-12,performance;carrefour
+T-092,Dashboard performance — fix requêtes N+1,bug,done,critical,Bob Leroy,Sprint 8,2026-02-13,performance;carrefour
+T-093,Formation utilisateurs — support Carrefour,chore,done,medium,Alice Martin,Sprint 8,2026-02-14,carrefour;formation
+T-094,Analytics module — specs,chore,done,medium,Alice Martin,Sprint 8,2026-02-17,analytics;roadmap
+T-095,Bug notifications — doublons sur retry,bug,done,medium,Thomas Bernard,Sprint 8,2026-02-18,notifications;bug
+T-096,Gestion variantes — specs initiales,chore,done,high,Alice Martin,Sprint 8,2026-02-19,variantes;roadmap
+T-097,API rate limiting — implémentation,feature,done,high,Bob Leroy,Sprint 8,2026-02-20,api;performance
+T-098,Bug session expirée — message d'erreur,bug,done,low,Emma Rousseau,Sprint 8,2026-02-21,auth;ux;bug
+T-099,Responsive design — amélioration tablette,feature,done,medium,Emma Rousseau,Sprint 8,2026-02-24,mobile;ux
+T-100,Onboarding — checklist J+1,chore,done,medium,Emma Rousseau,Sprint 8,2026-02-25,onboarding

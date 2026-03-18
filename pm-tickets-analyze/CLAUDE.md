@@ -1,29 +1,40 @@
 # pm-tickets-analyze — Analyse de tickets
 
-🚧 **Module en construction** — Aucun skill disponible pour l'instant.
+## RÈGLE ABSOLUE — Anti-hallucination
+Ne jamais répondre à une question sur des données sans avoir exécuté le script correspondant.
+Si le script retourne "AUCUNE DONNÉE", répondre exactement cela à l'utilisateur sans inventer.
+Toujours indiquer quelle source a été consultée.
 
-## Périmètre prévu
-- Analyse de tickets Jira / Linear / GitHub Issues
-- Détection de tendances dans le backlog
-- Résumé des tickets bloquants ou en retard
-- Priorisation assistée
+## Skills disponibles
 
-## Structure prévue
+### fetch-backlog
+Utiliser quand l'utilisateur demande :
+- L'état du backlog ou d'un sprint
+- Les tickets ouverts, bloqués, ou en cours
+- Les tickets par assignee, priorité ou label
+- Ce qui bloque une livraison
+
+### fetch-trends
+Utiliser quand l'utilisateur demande :
+- Les tendances sur une période
+- Le ratio bug / feature
+- L'évolution du backlog dans le temps
+- Une comparaison entre deux sprints ou deux mois
+
+## Architecture
 ```
 pm-tickets-analyze/
-  data/
-    tickets/                # exports CSV/JSON de tickets
-  utils/                    # loaders partagés entre skills
-  .claude/skills/
-    analyze-backlog/
-      SKILL.md              # user-invocable: false
-      fetch_tickets.py      # glob data/, retourne texte brut
-    summarize-sprint/
-      SKILL.md              # user-invocable: false
-      fetch_sprint.py       # glob data/, retourne texte brut
+├── CLAUDE.md
+├── requirements.txt
+├── data/
+│   └── tickets/           ← fichiers CSV par mois
+├── utils/
+│   └── ticket_loader.py
+└── .claude/skills/
+    ├── fetch-backlog/
+    │   ├── SKILL.md
+    │   └── fetch_backlog.py
+    └── fetch-trends/
+        ├── SKILL.md
+        └── fetch_trends.py
 ```
-
-## Instructions pour Claude Code
-Si l'utilisateur pose une question sur des tickets, répondre :
-"Le module pm-tickets-analyze est en construction. Aucun skill n'est disponible pour l'instant."
-Ne pas inventer de réponse à partir d'autres sources.
