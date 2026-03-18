@@ -1,31 +1,48 @@
-# pm-codebase-manager — Exploration et compréhension du code
+# pm-codebase-manager — Compréhension du code & releases
 
-🚧 **Module en construction** — Aucun skill disponible pour l'instant.
+## RÈGLE ABSOLUE — Anti-hallucination
+Ne jamais répondre à une question sur du code ou une release sans avoir exécuté le script correspondant.
+Si le script retourne "AUCUNE DONNÉE", répondre exactement cela à l'utilisateur sans inventer.
+Toujours indiquer quel fichier a été consulté.
 
-## Périmètre prévu
-- Lire et expliquer du code source en langage accessible pour un PM
-- Répondre à des questions sur le fonctionnement technique d'une feature
-- Résumer ce que les devs ont livré (PRs, commits, changelogs)
-- Identifier les impacts produit d'un changement technique
+## Skills disponibles
 
-## Structure prévue
+### explain-code
+Utiliser quand l'utilisateur demande :
+- Comment fonctionne une feature ou un endpoint technique
+- Ce que fait un fichier de code spécifique
+- Les limites ou règles d'une API (rate limits, taille de batch...)
+- L'impact produit d'un choix technique
+
+### summarize-releases
+Utiliser quand l'utilisateur demande :
+- Ce qui a été livré dans une version ou un sprint
+- Les nouveautés récentes de la plateforme
+- L'impact d'une release sur un client spécifique
+- Un résumé des changelogs pour une présentation
+
+## Architecture
 ```
 pm-codebase-manager/
-  data/
-    source/                   # fichiers de code à expliquer (.py, .ts, .js...)
-    releases/                 # changelogs, release notes (.md, .txt)
-    pull_requests/            # exports de PRs (GitHub, GitLab)
-  utils/                      # loaders partagés entre skills
-  .claude/skills/
-    explain-code/
-      SKILL.md                # user-invocable: false
-      fetch_code.py           # glob data/, retourne le code brut
-    summarize-releases/
-      SKILL.md                # user-invocable: false
-      fetch_releases.py       # glob data/, retourne texte brut
+├── CLAUDE.md
+├── requirements.txt
+├── data/
+│   ├── source/                    ← fichiers de code source (.py, .ts, .js...)
+│   │   ├── products_api.py        — API batch Acme Corp
+│   │   ├── webhook_handler.ts     — Webhooks NovaTech
+│   │   └── dashboard_cache.py     — Cache Redis Carrefour Digital
+│   └── releases/                  ← changelogs et release notes (.md)
+│       ├── changelog_v2.3.md      — Webhooks + API batch (mars 2026)
+│       └── changelog_v2.2.md      — Cache dashboards (février 2026)
+├── utils/
+│   ├── __init__.py
+│   ├── code_loader.py             — load(filepath) → dict {filename, language, content}
+│   └── release_loader.py         — load(filepath) → dict {filename, version, date, content}
+└── .claude/skills/
+    ├── explain-code/
+    │   ├── SKILL.md               — user-invocable: false
+    │   └── fetch_code.py          — glob data/source/, filtre par query, retourne code brut
+    └── summarize-releases/
+        ├── SKILL.md               — user-invocable: false
+        └── fetch_releases.py      — glob data/releases/, filtre par query, retourne changelog brut
 ```
-
-## Instructions pour Claude Code
-Si l'utilisateur pose une question sur du code, une release ou un changement technique,
-répondre : "Le module pm-codebase-manager est en construction. Aucun skill n'est disponible pour l'instant."
-Ne pas inventer de réponse à partir d'autres sources.

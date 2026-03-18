@@ -25,9 +25,9 @@ Questions sur : interviews, insights utilisateurs, opportunités produit.
 Questions sur : emails non lus, messages Slack, triage des urgences, brouillons de réponse.
 → Voir `pm-inbox/CLAUDE.md` pour les instructions détaillées.
 
-### 🚧 pm-codebase-manager/ — Exploration et compréhension du code
-Questions sur : code source, releases, PRs, changelogs, impacts techniques d'une feature.
-→ En construction, aucun skill disponible.
+### ✅ pm-codebase-manager/ — Exploration et compréhension du code
+Questions sur : code source, releases, changelogs, impacts techniques d'une feature, limites d'API.
+→ Voir `pm-codebase-manager/CLAUDE.md` pour les instructions détaillées.
 
 ## Contexte PM
 Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile.md`.
@@ -38,6 +38,7 @@ Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile
 - Question sur emails/messages/Slack → exécuter les skills dans `pm-inbox/`
 - Question sur interviews/insights/opportunités produit → exécuter les skills dans `pm-discovery/`
 - Question sur tickets/backlog/sprint/tendances → exécuter les skills dans `pm-tickets-analyze/`
+- Question sur code source/releases/changelogs/API technique → exécuter les skills dans `pm-codebase-manager/`
 - Question sur un autre domaine → indiquer que le module est en construction
 
 ## Convention code partagé
