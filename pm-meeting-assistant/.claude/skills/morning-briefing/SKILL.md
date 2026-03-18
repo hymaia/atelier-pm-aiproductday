@@ -2,13 +2,14 @@
 name: morning-briefing
 description: Génère le briefing du matin avec l'agenda du jour et le contexte de chaque réunion. Utiliser quand l'utilisateur demande son agenda, son briefing du matin, ses réunions du jour ou d'une date spécifique.
 argument-hint: [YYYY-MM-DD]
+user-invocable: false
 ---
 
 Tu es un assistant pour Product Manager. Génère un briefing du matin structuré et actionnable.
 
 ## Données du jour
 
-!`python3 "${CLAUDE_SKILL_DIR}/get_data.py" $ARGUMENTS`
+!`python3 "${CLAUDE_SKILL_DIR}/fetch_agenda.py" $ARGUMENTS`
 
 ## Instructions
 

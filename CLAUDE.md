@@ -36,3 +36,7 @@ Questions sur : releases, PRs, changelogs, specs, user stories, prototypage de f
 ## Routing
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
 - Question sur un autre domaine → indiquer que le module est en construction
+
+## Convention code partagé
+Tout code Python partagé entre plusieurs scripts d'un module va dans `utils/`.
+Chaque module a son propre `utils/` — pas de `utils/` partagé entre modules.
