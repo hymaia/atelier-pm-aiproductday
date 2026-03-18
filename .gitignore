@@ -1,3 +1,14 @@
 # Workspace root gitignore
 .DS_Store
 .claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Environnement
+.env
+
+# Fichiers générés
+index.json
+*.tar

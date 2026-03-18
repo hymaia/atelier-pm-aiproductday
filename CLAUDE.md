@@ -21,9 +21,9 @@ Questions sur : tickets Jira/Linear, backlogs, tendances, priorités.
 Questions sur : interviews, insights utilisateurs, opportunités produit.
 → En construction, aucun skill disponible.
 
-### 🚧 pm-inbox/ — Gestion des messages entrants
+### ✅ pm-inbox/ — Gestion des messages entrants
 Questions sur : emails non lus, messages Slack, triage des urgences, brouillons de réponse.
-→ En construction, aucun skill disponible.
+→ Voir `pm-inbox/CLAUDE.md` pour les instructions détaillées.
 
 ### 🚧 pm-data-analyze/ — Analyse de données
 Questions sur : métriques, KPIs, dashboards, données quantitatives.
@@ -39,7 +39,7 @@ Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile
 
 ## Routing
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
-- Question sur emails/messages/Slack → module `pm-inbox/` (en construction)
+- Question sur emails/messages/Slack → exécuter les skills dans `pm-inbox/`
 - Question sur un autre domaine → indiquer que le module est en construction
 
 ## Convention code partagé
@@ -56,6 +56,7 @@ Chaque module suit cette structure :
 ```
 pm-xxx/
 ├── CLAUDE.md                  ← routing local + règles
+├── requirements.txt           ← dépendances Python du module (même vide)
 ├── data/                      ← fichiers de données brutes
 ├── utils/                     ← loaders et code partagé
 └── .claude/skills/
@@ -71,3 +72,8 @@ Règles à respecter lors de la création ou modification de fichiers :
 - `user-invocable: false` obligatoire dans le frontmatter de chaque `SKILL.md`
 - Pas d'`indexer.py` ni d'`index.json` — les scripts font un glob direct sur `data/`
 - Pas de `main.py` — l'interaction se fait uniquement via Claude Code
+
+Fichiers qui appartiennent à la racine du workspace, jamais dans un module :
+- `.gitignore` — un seul à la racine
+- `.env` — variables d'environnement à la racine
+- `README.md` — un seul à la racine
