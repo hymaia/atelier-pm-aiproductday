@@ -21,8 +21,8 @@ Questions sur : tickets Jira/Linear, backlogs, tendances, priorités.
 Questions sur : interviews, insights utilisateurs, opportunités produit.
 → En construction, aucun skill disponible.
 
-### 🚧 pm-questions-answering/ — Q&A sur la documentation
-Questions sur : specs, PRDs, documentation produit.
+### 🚧 pm-inbox/ — Gestion des messages entrants
+Questions sur : emails non lus, messages Slack, triage des urgences, brouillons de réponse.
 → En construction, aucun skill disponible.
 
 ### 🚧 pm-data-analyze/ — Analyse de données
@@ -33,8 +33,13 @@ Questions sur : métriques, KPIs, dashboards, données quantitatives.
 Questions sur : releases, PRs, changelogs, specs, user stories, prototypage de fonctionnalités.
 → En construction, aucun skill disponible.
 
+## Contexte PM
+Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile.md`.
+À lire pour personnaliser les réponses et rédiger dans le bon ton.
+
 ## Routing
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
+- Question sur emails/messages/Slack → module `pm-inbox/` (en construction)
 - Question sur un autre domaine → indiquer que le module est en construction
 
 ## Convention code partagé
