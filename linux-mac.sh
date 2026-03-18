@@ -16,8 +16,10 @@ if [[ "${DOCKER_MISSING:-0}" -eq 1 ]]; then
 
   OS="$(uname -s | tr '[:upper:]' '[:lower:]')"
   if [[ "$OS" == "darwin" ]]; then
-    info "Téléchargement de Docker Desktop pour macOS..."
-    curl -L "https://desktop.docker.com/mac/main/amd64/Docker.dmg" -o /tmp/Docker.dmg
+    ARCH="$(uname -m)"
+    [[ "$ARCH" == "arm64" ]] && DOCKER_ARCH="arm64" || DOCKER_ARCH="amd64"
+    info "Téléchargement de Docker Desktop pour macOS ($DOCKER_ARCH)..."
+    curl -L "https://desktop.docker.com/mac/main/${DOCKER_ARCH}/Docker.dmg" -o /tmp/Docker.dmg
     info "Montage de l'image..."
     hdiutil attach /tmp/Docker.dmg >/dev/null
     info "Copie de Docker.app vers /Applications..."
