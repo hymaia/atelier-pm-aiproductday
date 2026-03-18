@@ -25,12 +25,8 @@ Questions sur : interviews, insights utilisateurs, opportunités produit.
 Questions sur : emails non lus, messages Slack, triage des urgences, brouillons de réponse.
 → Voir `pm-inbox/CLAUDE.md` pour les instructions détaillées.
 
-### 🚧 pm-data-analyze/ — Analyse de données
-Questions sur : métriques, KPIs, dashboards, données quantitatives.
-→ En construction, aucun skill disponible.
-
-### 🚧 pm-dev-bridge/ — Compréhension dev & prototypage
-Questions sur : releases, PRs, changelogs, specs, user stories, prototypage de fonctionnalités.
+### 🚧 pm-codebase-manager/ — Exploration et compréhension du code
+Questions sur : code source, releases, PRs, changelogs, impacts techniques d'une feature.
 → En construction, aucun skill disponible.
 
 ## Contexte PM
