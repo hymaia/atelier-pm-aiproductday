@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 — PM × Claude Code</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #6ac5d9;
+      --pink: #f086a2;
+      --white: #ffffff;
+      --muted: rgba(255,255,255,0.55);
+      --card-bg: rgba(255,255,255,0.05);
+      --card-border: rgba(106,197,217,0.25);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #0a0818 0%, #1a1040 40%, #282352 70%, #3d2e5f 100%);
+      min-height: 100vh;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Geometric background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background:
+        radial-gradient(ellipse at 20% 20%, rgba(106,197,217,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(240,134,162,0.08) 0%, transparent 50%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+    @keyframes bgPulse {
+      from { opacity: 0.6; transform: scale(1); }
+      to   { opacity: 1;   transform: scale(1.05); }
+    }
+
+    .slide {
+      width: 100%;
+      max-width: 1280px;
+      padding: 48px 80px;
+      display: flex;
+      gap: 80px;
+      align-items: center;
+      animation: fadeInUp 0.6s ease both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Left column — hero */
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(106,197,217,0.12);
+      border: 1px solid rgba(106,197,217,0.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--teal);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+    .tag::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-size: 72px;
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2px;
+    }
+    h1 span.accent { color: var(--teal); }
+    h1 span.accent2 { color: var(--pink); }
+
+    .subtitle {
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .tagline {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .pill {
+      background: rgba(240,134,162,0.12);
+      border: 1px solid rgba(240,134,162,0.3);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--pink);
+    }
+    .arrow {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* Right column — prereqs */
+    .prereqs {
+      flex: 0 0 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .prereqs-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+    .prereq-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .prereq-item:nth-child(2) { animation-delay: 0.1s; }
+    .prereq-item:nth-child(3) { animation-delay: 0.2s; }
+    .prereq-item:nth-child(4) { animation-delay: 0.3s; }
+    .prereq-item:nth-child(5) { animation-delay: 0.4s; }
+    .prereq-check {
+      width: 20px; height: 20px;
+      border: 2px solid rgba(106,197,217,0.4);
+      border-radius: 6px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .prereq-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .prereq-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    code {
+      font-family: 'Inconsolata', monospace;
+      font-size: 12px;
+      color: var(--teal);
+      background: rgba(106,197,217,0.08);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* Nav */
+    .nav {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover { background: rgba(106,197,217,0.15); border-color: var(--teal); }
+    .nav-btn.disabled { opacity: 0.2; pointer-events: none; }
+    .slide-counter {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .slide-counter span { color: var(--teal); }
+  </style>
+</head>
+<body>
+  <div class="slide">
+    <div class="hero">
+      <div class="tag">Product Day · Atelier Claude Code</div>
+      <h1>PM<span class="accent2">×</span><br><span class="accent">Claude</span><br>Code</h1>
+      <p class="subtitle">Construire votre OS personnel<br>avec l'IA — en 1 heure.</p>
+      <div class="tagline">
+        <span class="pill">Découvrir</span>
+        <span class="arrow">→</span>
+        <span class="pill">Tester</span>
+        <span class="arrow">→</span>
+        <span class="pill">Personnaliser</span>
+      </div>
+    </div>
+
+    <div class="prereqs">
+      <div class="prereqs-title">Prérequis — vérifiez avant de commencer</div>
+      <div class="prereq-item">
+        <div class="prereq-check"></div>
+        <div class="prereq-content">
+          <span class="prereq-label">Claude Code installé</span>
+          <code>npm install -g @anthropic-ai/claude-code</code>
+        </div>
+      </div>
+      <div class="prereq-item">
+        <div class="prereq-check"></div>
+        <div class="prereq-content">
+          <span class="prereq-label">Repo cloné</span>
+          <code>git clone git@github.com:hymaia/atelier-pm-aiproductday.git</code>
+        </div>
+      </div>
+      <div class="prereq-item">
+        <div class="prereq-check"></div>
+        <div class="prereq-content">
+          <span class="prereq-label">Clé API Anthropic</span>
+          <code>export ANTHROPIC_API_KEY=sk-ant-...</code>
+        </div>
+      </div>
+      <div class="prereq-item">
+        <div class="prereq-check"></div>
+        <div class="prereq-content">
+          <span class="prereq-label">Lancer Claude Code</span>
+          <code>cd atelier-pm-aiproductday &amp;&amp; claude</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a class="nav-btn disabled" href="#">←</a>
+    <span class="slide-counter"><span>01</span> / 06</span>
+    <a class="nav-btn" href="../slide-02-storymap/index.html" id="nextBtn">→</a>
+  </nav>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === ' ') window.location.href = '../slide-02-storymap/index.html';
+    });
+  </script>
+</body>
+</html>

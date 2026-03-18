@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 — Conclusion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #6ac5d9;
+      --pink: #f086a2;
+      --purple: #b5a8d0;
+      --white: #ffffff;
+      --muted: rgba(255,255,255,0.55);
+      --card-bg: rgba(255,255,255,0.05);
+      --card-border: rgba(106,197,217,0.2);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #0a0818 0%, #1a1040 40%, #282352 70%, #3d2e5f 100%);
+      min-height: 100vh;
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 40px 80px 80px;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 10% 90%, rgba(240,134,162,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 10%, rgba(106,197,217,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      animation: fadeInUp 0.5s ease both;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(181,168,208,0.12);
+      border: 1px solid rgba(181,168,208,0.3);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--purple);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 { font-size: 40px; font-weight: 800; letter-spacing: -1.5px; }
+    h1 span { color: var(--teal); }
+    .subtitle { font-size: 15px; color: var(--muted); font-weight: 300; margin-top: 8px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* Concept map */
+    .concept-map {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeInUp 0.5s ease 0.1s both;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 4px;
+    }
+    .concept-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0;
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .concept-row:hover { border-color: rgba(106,197,217,0.25); }
+
+    .concept-key {
+      padding: 12px 16px;
+      background: rgba(106,197,217,0.07);
+      border-right: 1px solid rgba(106,197,217,0.15);
+      font-family: 'Inconsolata', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+    }
+    .concept-value {
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+    .concept-title { font-size: 13px; font-weight: 600; color: var(--white); }
+    .concept-desc  { font-size: 12px; color: var(--muted); }
+
+    /* Next steps */
+    .next-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      animation: fadeInUp 0.5s ease 0.2s both;
+    }
+    .next-card {
+      padding: 18px 20px;
+      background: var(--card-bg);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      transition: all 0.2s;
+    }
+    .next-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.15); }
+    .next-card-title {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .next-card-title .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--pink);
+    }
+    .next-card-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    code {
+      font-family: 'Inconsolata', monospace;
+      font-size: 11px;
+      color: var(--teal);
+      background: rgba(106,197,217,0.1);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+
+    /* CTA */
+    .cta {
+      margin-top: 8px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(106,197,217,0.08), rgba(240,134,162,0.08));
+      border: 1px solid rgba(106,197,217,0.2);
+      border-radius: 12px;
+      text-align: center;
+      animation: fadeInUp 0.5s ease 0.3s both;
+    }
+    .cta-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .cta-title span { color: var(--teal); }
+    .cta-sub { font-size: 12px; color: var(--muted); }
+
+    /* Nav */
+    .nav {
+      position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 20px;
+    }
+    .nav-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--card-bg); border: 1px solid var(--card-border);
+      color: var(--white); text-decoration: none; font-size: 16px; transition: all 0.2s;
+    }
+    .nav-btn:hover { background: rgba(106,197,217,0.15); border-color: var(--teal); }
+    .nav-btn.disabled { opacity: 0.2; pointer-events: none; }
+    .slide-counter { font-size: 12px; font-weight: 600; color: var(--muted); }
+    .slide-counter span { color: var(--teal); }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="tag">Conclusion</div>
+    <h1>Ce que vous venez<br>d'<span>utiliser</span></h1>
+    <p class="subtitle">Les concepts clés de Claude Code pour PM</p>
+  </div>
+
+  <div class="layout">
+    <div class="concept-map">
+      <div class="section-label">Mapping des concepts</div>
+
+      <div class="concept-row">
+        <div class="concept-key">CLAUDE.md</div>
+        <div class="concept-value">
+          <div class="concept-title">Instructions permanentes</div>
+          <div class="concept-desc">Le contexte que Claude lit à chaque session — votre brief d'onboarding</div>
+        </div>
+      </div>
+      <div class="concept-row">
+        <div class="concept-key">data/</div>
+        <div class="concept-value">
+          <div class="concept-title">Votre base de connaissance</div>
+          <div class="concept-desc">Vos fichiers source — calendrier, transcripts, notes, métriques</div>
+        </div>
+      </div>
+      <div class="concept-row">
+        <div class="concept-key">indexer.py</div>
+        <div class="concept-value">
+          <div class="concept-title">Pipeline d'indexation</div>
+          <div class="concept-desc">Prépare vos données pour que Claude puisse les interroger efficacement</div>
+        </div>
+      </div>
+      <div class="concept-row">
+        <div class="concept-key">loaders/</div>
+        <div class="concept-value">
+          <div class="concept-title">Connecteurs de données</div>
+          <div class="concept-desc">Lisent CSV, TXT, MD, PDF — vos intégrations métier</div>
+        </div>
+      </div>
+      <div class="concept-row">
+        <div class="concept-key">.claude/skills/</div>
+        <div class="concept-value">
+          <div class="concept-title">Vos commandes métier</div>
+          <div class="concept-desc">Vos macros IA — exécutables avec <code>/nom-du-skill</code></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="next-steps">
+      <div class="section-label">Pour aller plus loin</div>
+
+      <div class="next-card">
+        <div class="next-card-title"><span class="dot"></span>Brancher vos vraies données</div>
+        <div class="next-card-desc">Votre calendrier Google, vos tickets Jira, vos interviews — tout ce qui est dans <code>data/</code> devient contexte pour Claude.</div>
+      </div>
+
+      <div class="next-card">
+        <div class="next-card-title"><span class="dot"></span>Créer vos propres skills</div>
+        <div class="next-card-desc">Tout ce que vous faites de répétitif peut devenir un skill : préparer un comité, rédiger une spec, résumer un sprint.</div>
+      </div>
+
+      <div class="next-card">
+        <div class="next-card-title"><span class="dot"></span>Partager avec votre équipe</div>
+        <div class="next-card-desc">Le repo est partageable. Chaque PM peut avoir son propre contexte dans le même OS — chacun branche ses données.</div>
+      </div>
+
+      <div class="cta">
+        <div class="cta-title">Repo de l'atelier · <span>github.com/hymaia/atelier-pm-aiproductday</span></div>
+        <div class="cta-sub">Clonez, forkez, personnalisez — c'est le principe.</div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a class="nav-btn" href="../slide-05-atelier/index.html">←</a>
+    <span class="slide-counter"><span>06</span> / 06</span>
+    <a class="nav-btn disabled" href="#">→</a>
+  </nav>
+
+  <script>
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') window.location.href = '../slide-05-atelier/index.html';
+    });
+  </script>
+</body>
+</html>
