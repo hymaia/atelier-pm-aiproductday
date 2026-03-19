@@ -1,2 +1,0 @@
-# pm-tickets-analyze — Dépendances Python
-# Aucune dépendance externe — bibliothèque standard uniquement

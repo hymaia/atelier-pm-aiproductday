@@ -1,2 +1,0 @@
-# pm-codebase-manager — Dépendances Python
-# Aucune dépendance externe — bibliothèque standard uniquement
