@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-WORKSHOP_TAR="workshop-vscode.tar"
+WORKSHOP_TAR="atelier-pm.tar"
 WORKSHOP_IMAGE="atelier-pm:latest"
-GDRIVE_FILE_ID="1ICnWeiJUiLO6mo2xp8c6RKvFo4--CdlY"
+GDRIVE_FILE_ID="1_KxF8639peRuBMp3SnlFIRsa2Y0mgAWX"
 GDRIVE_URL="https://drive.google.com/uc?export=download&id=${GDRIVE_FILE_ID}"
 
 info() { echo "[INFO] $*"; }

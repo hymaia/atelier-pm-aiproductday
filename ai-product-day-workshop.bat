@@ -1,9 +1,9 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set WORKSHOP_TAR=workshop-vscode.tar
+set WORKSHOP_TAR=atelier-pm.tar
 set WORKSHOP_IMAGE=atelier-pm:latest
-set GDRIVE_FILE_ID=1ICnWeiJUiLO6mo2xp8c6RKvFo4--CdlY
+set GDRIVE_FILE_ID=1_KxF8639peRuBMp3SnlFIRsa2Y0mgAWX
 
 :: ── Docker installé ? ───────────────────────────────────────────────────────
 where docker >nul 2>&1
