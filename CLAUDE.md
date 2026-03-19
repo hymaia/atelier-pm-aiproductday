@@ -13,21 +13,21 @@ Toujours indiquer quelle source a été consultée.
 Questions sur : agenda, réunions, participants, briefing du matin, préparation de meetings.
 → Voir `pm-meeting-assistant/CLAUDE.md` pour les instructions détaillées.
 
-### ✅ pm-tickets-analyze/ — Analyse de tickets
+### 🚧 pm-tickets-analyze/ — Analyse de tickets
 Questions sur : tickets Jira/Linear, backlogs, tendances, priorités.
-→ Voir `pm-tickets-analyze/CLAUDE.md` pour les instructions détaillées.
+→ Module à construire pendant l'atelier. Données disponibles dans `pm-tickets-analyze/data/`.
 
-### ✅ pm-discovery/ — Discovery & recherche utilisateur
+### 🚧 pm-discovery/ — Discovery & recherche utilisateur
 Questions sur : interviews, insights utilisateurs, opportunités produit.
-→ Voir `pm-discovery/CLAUDE.md` pour les instructions détaillées.
+→ Module à construire pendant l'atelier. Données disponibles dans `pm-discovery/data/`.
 
-### ✅ pm-inbox/ — Gestion des messages entrants
+### 🚧 pm-inbox/ — Gestion des messages entrants
 Questions sur : emails non lus, messages Slack, triage des urgences, brouillons de réponse.
-→ Voir `pm-inbox/CLAUDE.md` pour les instructions détaillées.
+→ Voir `pm-inbox/CLAUDE.md` pour les instructions. Skills en cours d'amélioration.
 
-### ✅ pm-codebase-manager/ — Exploration et compréhension du code
+### 🚧 pm-codebase-manager/ — Exploration et compréhension du code
 Questions sur : code source, releases, changelogs, impacts techniques d'une feature, limites d'API.
-→ Voir `pm-codebase-manager/CLAUDE.md` pour les instructions détaillées.
+→ Module à construire pendant l'atelier. Données disponibles dans `pm-codebase-manager/data/`.
 
 ## Contexte PM
 Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile.md`.
@@ -36,9 +36,9 @@ Le profil du PM (rôle, style, clients, priorités) est dans `context/pm_profile
 ## Routing
 - Question sur réunion/agenda/meeting → exécuter les skills dans `pm-meeting-assistant/`
 - Question sur emails/messages/Slack → exécuter les skills dans `pm-inbox/`
-- Question sur interviews/insights/opportunités produit → exécuter les skills dans `pm-discovery/`
-- Question sur tickets/backlog/sprint/tendances → exécuter les skills dans `pm-tickets-analyze/`
-- Question sur code source/releases/changelogs/API technique → exécuter les skills dans `pm-codebase-manager/`
+- Question sur interviews/insights/opportunités produit → indiquer que pm-discovery est à construire
+- Question sur tickets/backlog/sprint/tendances → indiquer que pm-tickets-analyze est à construire
+- Question sur code source/releases/changelogs/API technique → indiquer que pm-codebase-manager est à construire
 - Question sur un autre domaine → indiquer que le module est en construction
 
 ## Convention code partagé
