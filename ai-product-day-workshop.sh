@@ -3,7 +3,7 @@ set -euo pipefail
 
 WORKSHOP_TAR="atelier-pm.tar"
 WORKSHOP_IMAGE="atelier-pm:latest"
-GDRIVE_FILE_ID="1_KxF8639peRuBMp3SnlFIRsa2Y0mgAWX"
+GDRIVE_FILE_ID="19XSc3JQJ0yE4fet6F2kYhe9U3H8RJ6fp"
 GDRIVE_URL="https://drive.google.com/uc?export=download&id=${GDRIVE_FILE_ID}"
 
 info() { echo "[INFO] $*"; }
